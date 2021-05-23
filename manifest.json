@@ -1,0 +1,7 @@
+{
+  "name": "Continuous Design - GitHub Actions",
+  "id": "977948326423807703",
+  "api": "1.0.0",
+  "main": "build/code.js",
+  "ui": "build/ui.html"
+}

@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="<%= require('./styles.css') %>">
+
+<body>
+	<main>
+		<label for="InputToken">Personal access token</label>
+		<input id="InputToken" type="password"></input>
+
+		<label for="InputUser">GitHub user name</label>
+		<input id="InputUser" type="text"></input>
+
+		<label for="InputRepo">Repository name</label>
+		<input id="InputRepo" type="text"></input>
+
+		<label for="InputWorkflow">Workflow name</label>
+		<input id="InputWorkflow" type="text" placeholder="main.yml"></input>
+
+		<label for="InputMessage">Message?</label>
+		<input id="InputMessage" type="text" placeholder="Updated Figma"></input>
+
+		<div class="Flex">
+			<div class="Input">
+				<label for="InputBranch">Branch</label>
+				<input id="InputBranch" type="text" placeholder="main"></input>
+			</div>
+			<div class="Input">
+				<label for="InputVersion">Version?</label>
+				<input id="InputVersion" type="text" placeholder="Latest"></input>
+			</div>
+		</div>
+		<div class="Flex">
+			<div class="Input">
+				<button type="button" id="ButtonStore" class="ButtonSecondary">Store settings</button>
+			</div>
+			<div class="Input">
+				<button type="button" id="ButtonClear" class="ButtonSecondary">Clear settings</button>
+			</div>
+		</div>
+		<button type="submit" id="ButtonStart">Start CI workflow</button>
+	</main>
+
+	<div id="FigmaGitHubActionsPlugin"></div>
+</body>

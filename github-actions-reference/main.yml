@@ -1,0 +1,54 @@
+name: main
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message. What changes were made?'
+        required: false
+        default: 'Updated Figma'
+      version:
+        description: 'Which version of the Figma document to use?'
+        required: false
+        default: '' # Will use latest if not set
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build-unix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ["ubuntu-latest"]
+        node-version: [14.x]
+    steps:
+      - name: Inputs
+        id: input-messages
+        run: |
+          echo "MESSAGE ---> '${{ github.event.inputs.message }}'"
+          echo "VERSION ---> '${{ github.event.inputs.version }}'"
+
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        id: node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Figmagic
+        id: install
+        run: npm install -D figmagic
+
+      - name: Run Figmagic and use latest Figma data
+        id: figma-latest
+        if: ${{ !github.event.inputs.version }}
+        run: node node_modules/figmagic/build/index.js
+
+      - name: Run Figmagic and use named version of Figma data
+        id: figma-versioned
+        if: ${{ github.event.inputs.version }}
+        run: node node_modules/figmagic/build/index.js -- --versionName ${{ github.event.inputs.version }}

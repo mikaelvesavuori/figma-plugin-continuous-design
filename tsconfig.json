@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "target": "es6",
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "strict": true,
+    "importHelpers": false,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@figma"
+    ],
+  },
+  "include": ["src/"]
+}

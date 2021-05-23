@@ -1,0 +1,34 @@
+{
+  "name": "continuous-design-github",
+  "version": "1.0.0",
+  "description": "Continuous Design (GitHub Actions) is a Figma plugin that lets you run GitHub Actions workflows from Figma.",
+  "author": "Mikael Vesavuori",
+  "license": "MIT",
+  "main": "build/code.js",
+  "scripts": {
+    "start": "npx webpack --mode=development --watch",
+    "start:tsc": "tsc -w -p tsconfig.json",
+    "build": "npm run clean && npm run build:webpack",
+    "build:tsc": "tsc -p tsconfig.json",
+    "build:webpack": "npx webpack --mode=production",
+    "clean": "rm -rf build",
+    "copy:ui": "cp src/ui.html build"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.23.0",
+    "css-loader": "^5.2.5",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-inline-source-plugin": "^1.0.0-beta.2",
+    "html-webpack-plugin": "^4.5.2",
+    "prettier": "^2.3.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.2.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}

@@ -1,0 +1,97 @@
+:root {
+  --color-white: #fff;
+  --color-blue: #4b2fee;
+  --color-blue-secondary: #1d0d79;
+  --color-blue-hover: #09032c;
+
+  --time-short-animation: 0.25s;
+  --time-regular-animation: 0.65s;
+}
+
+html,
+body {
+  font-size: 16px;
+}
+
+html,
+body,
+iframe {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.75em;
+}
+
+main {
+  width: 100%;
+
+  z-index: 1;
+  position: fixed;
+  transform: translateY(0);
+  transition: var(--time-regular-animation);
+  box-sizing: border-box;
+  padding: 0.5em;
+  background-color: var(--color-white);
+}
+
+label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+  display: block !important;
+}
+
+input {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+
+  width: 100%;
+  height: 2em;
+  display: block;
+
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-size: 0.9rem;
+}
+
+button {
+  width: 100%;
+  height: 3em;
+
+  border: 0;
+  border-radius: 0.5em;
+  font-weight: 700;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+
+  margin: 0 0 1em 0;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: var(--time-short-animation);
+}
+
+button:hover,
+button:focus {
+  background-color: var(--color-blue-hover);
+  transition: var(--time-short-animation);
+}
+
+.ButtonSecondary {
+  background-color: var(--color-blue-secondary);
+}
+
+/* Helper classes */
+.Input {
+  width: 48%;
+}
+
+.Flex {
+  display: flex;
+  justify-content: space-between;
+}
