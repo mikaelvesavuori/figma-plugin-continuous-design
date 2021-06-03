@@ -8,13 +8,21 @@ If you want to practice "continuous design" using Figma and a modern development
 
 ![Plugin](plugin.png)
 
+## Permissions and data collection
+
+You will need a "repo"-scoped personal access token (see below). This is the accepted way of handling plugins and other external tooling in the GitHub sphere.
+
+The plugin itself never sends this information anywhere other to call the GitHub API.
+
+You can decide to store the state of all fields. Doing so stores the current state (including the PAT value) in Figma's contained asyncStorage (essentially a sandboxed localStorage).
+
 ## Prerequisites
 
 You will need:
 
 - A [GitHub](https://github.com/) account
 - A pre-existing repository in GitHub
-- A pre-existing GitHub Actions workflow; for a reference see `github-actions-reference/main.yml` which is an example of running Figmagic in CI through the Figma GitHub Actions plugin
+- A pre-existing GitHub Actions workflow; for a reference see `github-actions-reference/main.yml` which is an example of running [Figmagic](https://github.com/mikaelvesavuori/figmagic) in CI through the Figma GitHub Actions plugin
 - A personal access token (with "repo" scope"); create one at [https://github.com/settings/tokens](https://github.com/settings/tokens). If you are stuck, follow instructions at [GitHub](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 ## Instructions
