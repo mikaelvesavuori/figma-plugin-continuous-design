@@ -12,7 +12,7 @@ If you want to practice "continuous design" using Figma and a modern development
 
 You will need a "repo"-scoped personal access token (see below). This is the accepted way of handling plugins and other external tooling in the GitHub sphere.
 
-The plugin itself never sends this information anywhere other to call the GitHub API.
+The plugin itself never sends this information anywhere other than to call the GitHub API.
 
 You can decide to store the state of all fields. Doing so stores the current state (including the PAT value) in Figma's contained asyncStorage (essentially a sandboxed localStorage).
 
