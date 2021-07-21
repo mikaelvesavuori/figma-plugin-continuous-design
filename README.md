@@ -44,7 +44,7 @@ The strictly necessary fields to get a success response are:
 - **Repository name**: Your repository name as it appears in a typical URL.
 - **Workflow name [GitHub only]**: Has to be specified in the style of `filename.yml`. Defaults to `main.yml`.
 - **Organization name [Bitbucket only]**: Your organization's name (might also be called "workspace").
-- **Definition ID [Azure only]**: The seemingly random (?) ID that each pipeline receives. The easiest way to get it is to navigate to your pipeline in the Azure Devops web console and check the URL bar which should look like: `https://dev.azure.com/YOUR_USER/YOUR_PROJECT/_build?definitionId=16`.
+- **Definition ID [Azure only]**: The seemingly random (?) ID that each pipeline receives. The easiest way to get it is to navigate to your pipeline in the Azure DevOps web console and check the URL bar which should look like: `https://dev.azure.com/YOUR_USER/YOUR_PROJECT/_build?definitionId=16`.
 - **Branch**: Should be same as the branch you want to trigger. Defaults to `main`.
 
 The optional fields are:
