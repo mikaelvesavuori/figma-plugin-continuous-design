@@ -2,28 +2,41 @@
 
 <body>
 	<main>
-		<label for="InputToken">Personal access token</label>
+		<label id="LabelProvider" for="InputProvider">Provider</label>
+		<select id="InputProvider" title="Select CI/CD service provider">
+			<option value="github">GitHub Actions</option>
+			<option value="bitbucket">Bitbucket Pipelines</option>
+			<option value="azure">Azure DevOps Pipelines</option>
+		</select>
+
+		<label id="LabelToken" for="InputToken">Personal access token</label>
 		<input id="InputToken" type="password"></input>
 
-		<label for="InputUser">GitHub user name</label>
+		<label id="LabelUser" for="InputUser">User name</label>
 		<input id="InputUser" type="text"></input>
 
-		<label for="InputRepo">Repository name</label>
+		<label id="LabelRepository" for="InputRepo">Repository name</label>
 		<input id="InputRepo" type="text"></input>
 
-		<label for="InputWorkflow">Workflow name</label>
-		<input id="InputWorkflow" type="text" placeholder="main.yml"></input>
+		<label id="LabelOrgName" class="Hide" for="InputOrgName">Organization name</label>
+		<input id="InputOrgName" class="Hide" type="text"></input>
 
-		<label for="InputMessage">Message?</label>
+		<label id="LabelDefinitionId" class="Hide" for="InputDefinitionId">Definition ID</label>
+		<input id="InputDefinitionId" class="Hide" type="text"></input>
+
+		<label id="LabelWorkflow" class="Hide" for="InputWorkflow">Workflow name</label>
+		<input id="InputWorkflow" class="Hide" type="text" placeholder="main.yml"></input>
+
+		<label id="LabelMessage" for="InputMessage">Message?</label>
 		<input id="InputMessage" type="text" placeholder="Updated Figma"></input>
 
 		<div class="Flex">
 			<div class="Input">
-				<label for="InputBranch">Branch</label>
+				<label id="LabelBranch" for="InputBranch">Branch</label>
 				<input id="InputBranch" type="text" placeholder="main"></input>
 			</div>
 			<div class="Input">
-				<label for="InputVersion">Version?</label>
+				<label id="LabelVersion" for="InputVersion">Version?</label>
 				<input id="InputVersion" type="text" placeholder="Latest"></input>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
-import { startAction } from '../frameworks/startAction';
+import { callCi } from './callCi';
 import { createData } from '../frameworks/createData';
+import { updateProvider } from '../frameworks/updateProvider';
 
 /**
  * @description Add event listeners to plugin.
@@ -8,8 +9,9 @@ export function addEventListeners(dataStorageKey: string) {
   const BUTTON_STORE: HTMLInputElement | null = document.querySelector('#ButtonStore');
   const BUTTON_CLEAR: HTMLInputElement | null = document.querySelector('#ButtonClear');
   const BUTTON_START: HTMLInputElement | null = document.querySelector('#ButtonStart');
+  const SELECT_PROVIDER: HTMLSelectElement | null = document.querySelector('#InputProvider');
 
-  if (!BUTTON_START || !BUTTON_STORE || !BUTTON_CLEAR)
+  if (!BUTTON_START || !BUTTON_STORE || !BUTTON_CLEAR || !SELECT_PROVIDER)
     throw new Error('Missing required buttons and inputs in addEventListeners()!');
 
   BUTTON_STORE.onclick = async () => {
@@ -38,5 +40,10 @@ export function addEventListeners(dataStorageKey: string) {
     );
   };
 
-  BUTTON_START.onclick = async () => await startAction();
+  BUTTON_START.onclick = async () => await callCi();
+
+  SELECT_PROVIDER.onchange = async (event: any) => {
+    const value = event.target.value;
+    updateProvider(value);
+  };
 }

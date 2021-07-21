@@ -1,5 +1,5 @@
 {
-  "name": "Continuous Design - GitHub Actions",
+  "name": "Continuous Design - Run CI from Figma",
   "id": "977948326423807703",
   "api": "1.0.0",
   "main": "build/code.js",

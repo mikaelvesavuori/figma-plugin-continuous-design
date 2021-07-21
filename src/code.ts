@@ -1,32 +1,33 @@
 figma.showUI(__html__);
-figma.ui.resize(350, 460);
+figma.ui.resize(350, 520);
 
+/**
+ * @description Handler for incoming messages from the UI's <iframe> window.
+ * @see https://www.figma.com/plugin-docs/api/properties/figma-ui-onmessage/
+ */
 figma.ui.onmessage = async (message) => {
-  if (message.type === 'resize') {
-    figma.ui.resize(message.message.width, message.message.height);
-  }
+  const { type, key, data } = message;
 
-  if (message.type === 'notify') {
-    figma.notify(message.message);
-  }
+  if (type === 'notify') figma.notify(message.message);
 
-  // Store data
-  if (message.type === 'store') {
-    const { key, data } = message;
-    await figma.clientStorage.setAsync(key, data);
-  }
+  /**
+   * @description Store data.
+   */
+  if (type === 'store') await figma.clientStorage.setAsync(key, data);
 
-  // Load data
-  if (message.type === 'load') {
-    const { key } = message;
+  /**
+   * @description Load data.
+   */
+  if (type === 'load') {
     const data = await figma.clientStorage.getAsync(key);
-    if (data) figma.ui.postMessage(JSON.parse(data));
+    figma.ui.postMessage(JSON.stringify({ type: 'load', data }));
   }
 
-  // Clear data
-  if (message.type === 'clear') {
-    const { key } = message;
-    await figma.clientStorage.setAsync(key, '');
-    figma.ui.postMessage('cleared');
+  /**
+   * @description Clear data.
+   */
+  if (type === 'clear') {
+    await figma.clientStorage.setAsync(key, JSON.stringify({ provider: 'github' })); // Default to GitHub
+    figma.ui.postMessage(JSON.stringify({ type: 'clear' }));
   }
 };

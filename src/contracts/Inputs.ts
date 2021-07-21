@@ -1,4 +1,5 @@
 export type Inputs = {
+  providerInput: HTMLInputElement;
   tokenInput: HTMLInputElement;
   userInput: HTMLInputElement;
   repoInput: HTMLInputElement;
@@ -6,4 +7,6 @@ export type Inputs = {
   messageInput: HTMLInputElement;
   branchInput: HTMLInputElement;
   versionInput: HTMLInputElement;
+  definitionIdInput: HTMLInputElement;
+  orgNameInput: HTMLInputElement;
 };

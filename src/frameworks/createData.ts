@@ -1,4 +1,5 @@
 import { PluginState } from '../contracts/PluginState';
+import { Provider } from '../contracts/Provider';
 
 import { getInputs } from './getInputs';
 import { getInputValue } from './getInputValue';
@@ -8,15 +9,19 @@ import { getInputValue } from './getInputValue';
  */
 export function createData(): PluginState {
   const {
+    providerInput,
     tokenInput,
     userInput,
     repoInput,
     workflowInput,
     messageInput,
     branchInput,
-    versionInput
+    versionInput,
+    definitionIdInput,
+    orgNameInput
   } = getInputs();
 
+  const PROVIDER_VALUE = getInputValue(providerInput) as Provider;
   const TOKEN_VALUE = getInputValue(tokenInput);
   const USER_VALUE = getInputValue(userInput);
   const REPO_VALUE = getInputValue(repoInput);
@@ -24,15 +29,20 @@ export function createData(): PluginState {
   const MESSAGE_VALUE = getInputValue(messageInput, true);
   const BRANCH_VALUE = getInputValue(branchInput, true);
   const VERSION_VALUE = getInputValue(versionInput, true);
+  const DEFINITIONID_VALUE = getInputValue(definitionIdInput, true);
+  const ORG_VALUE = getInputValue(orgNameInput, true);
 
   const data: PluginState = {
+    provider: PROVIDER_VALUE,
     token: TOKEN_VALUE,
     user: USER_VALUE,
     repo: REPO_VALUE,
     workflow: WORKFLOW_VALUE,
     message: MESSAGE_VALUE,
     branch: BRANCH_VALUE,
-    version: VERSION_VALUE
+    version: VERSION_VALUE,
+    definitionId: DEFINITIONID_VALUE,
+    orgName: ORG_VALUE
   };
 
   return data;
