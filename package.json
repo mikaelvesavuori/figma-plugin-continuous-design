@@ -1,6 +1,6 @@
 {
   "name": "figma-plugin-continuous-design",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Continuous Design is a Figma plugin that lets you run GitHub Actions/Bitbucket Pipelines/Azure Devops Pipelines workflows from Figma.",
   "author": "Mikael Vesavuori",
   "license": "MIT",
@@ -15,20 +15,20 @@
     "copy:ui": "cp src/ui.html build"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1",
-    "css-loader": "^6",
-    "eslint": "^7",
-    "eslint-config-prettier": "^8",
-    "eslint-plugin-prettier": "^3",
-    "html-loader": "^2",
+    "@figma/plugin-typings": "1",
+    "css-loader": "6",
+    "eslint": "8",
+    "eslint-config-prettier": "8",
+    "eslint-plugin-prettier": "4",
+    "html-loader": "4",
     "html-webpack-inline-source-plugin": "^1.0.0-beta.2",
-    "html-webpack-plugin": "^5",
-    "prettier": "^2",
-    "style-loader": "^3",
-    "ts-loader": "^9",
-    "typescript": "^4",
-    "url-loader": "^4",
-    "webpack": "^5",
-    "webpack-cli": "^4"
+    "html-webpack-plugin": "5",
+    "prettier": "2",
+    "style-loader": "3",
+    "ts-loader": "9",
+    "typescript": "4",
+    "url-loader": "4",
+    "webpack": "5",
+    "webpack-cli": "5"
   }
 }
