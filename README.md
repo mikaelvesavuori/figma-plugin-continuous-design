@@ -17,7 +17,7 @@ You will need:
 - An account with your provider
 - A pre-existing repository with your provider
 - A pre-existing CI workflow:
-  - For a GitHub reference, see my repo [github-ci-demo](https://github.com/mikaelvesavuori/github-ci-demo). Note that you have to allow Actions to be run in the repo for this to work! Please also so [how the workflow and `  workflow_dispatch` is defined](https://github.com/mikaelvesavuori/github-ci-demo/blob/main/.github/workflows/main.yml) to better understand your setup needs.
+  - For a GitHub reference, see my repo [github-ci-demo](https://github.com/mikaelvesavuori/github-ci-demo). Note that you have to allow Actions to be run in the repo for this to work! Please also see [how the workflow and `  workflow_dispatch` is defined](https://github.com/mikaelvesavuori/github-ci-demo/blob/main/.github/workflows/main.yml) to better understand your setup needs.
   - For a Bitbucket Pipelines reference, see my repo [bitbucket-ci-demo](https://github.com/mikaelvesavuori/bitbucket-ci-demo).
   - For an Azure DevOps Pipelines reference, see my repo [azure-devops-ci-demo](https://github.com/mikaelvesavuori/azure-devops-ci-demo).
 - A means of authentication:
