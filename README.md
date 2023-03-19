@@ -16,12 +16,12 @@ You will need:
 
 - An account with your provider
 - A pre-existing repository with your provider
-- A pre-existing CI workflow
-  - For a GitHub reference, see my repo [github-ci-demo](https://github.com/mikaelvesavuori/github-ci-demo)
-  - For a Bitbucket Pipelines reference, see my repo [bitbucket-ci-demo](https://github.com/mikaelvesavuori/bitbucket-ci-demo)
-  - For an Azure DevOps Pipelines reference, see my repo [azure-devops-ci-demo](https://github.com/mikaelvesavuori/azure-devops-ci-demo)
-- A means of authentication
-  - **GitHub**: A personal access token (with "repo" scope"). You can create one at [https://github.com/settings/tokens](https://github.com/settings/tokens). If you are stuck, follow the instructions at [GitHub](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+- A pre-existing CI workflow:
+  - For a GitHub reference, see my repo [github-ci-demo](https://github.com/mikaelvesavuori/github-ci-demo). Note that you have to allow Actions to be run in the repo for this to work! Please also so [how the workflow and `  workflow_dispatch` is defined](https://github.com/mikaelvesavuori/github-ci-demo/blob/main/.github/workflows/main.yml) to better understand your setup needs.
+  - For a Bitbucket Pipelines reference, see my repo [bitbucket-ci-demo](https://github.com/mikaelvesavuori/bitbucket-ci-demo).
+  - For an Azure DevOps Pipelines reference, see my repo [azure-devops-ci-demo](https://github.com/mikaelvesavuori/azure-devops-ci-demo).
+- A means of authentication:
+  - **GitHub**: A (classic) personal access token with `repo` scope". You can create one at [https://github.com/settings/tokens](https://github.com/settings/tokens). If you are stuck, follow the instructions at [GitHub](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
   - **Bitbucket**: An application password. You can create one at [https://bitbucket.org/account/settings/app-passwords/](https://bitbucket.org/account/settings/app-passwords/). More [instructions here](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/).
   - **Azure**: A personal access token. [Instructions here](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page).
 
