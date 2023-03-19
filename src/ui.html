@@ -5,6 +5,7 @@
 		<label id="LabelProvider" for="InputProvider">Provider</label>
 		<select id="InputProvider" title="Select CI/CD service provider">
 			<option value="github">GitHub Actions</option>
+			<option value="gitlab">GitLab CI/CD pipelines</option>
 			<option value="bitbucket">Bitbucket Pipelines</option>
 			<option value="azure">Azure DevOps Pipelines</option>
 		</select>
@@ -20,6 +21,12 @@
 
 		<label id="LabelOrgName" class="Hide" for="InputOrgName">Organization name</label>
 		<input id="InputOrgName" class="Hide" type="text"></input>
+
+		<label id="LabelProjectId" class="Hide" for="InputOrgName">Project ID</label>
+		<input id="InputProjectId" class="Hide" type="text"></input>
+
+		<label id="LabelRef" class="Hide" for="InputOrgName">Ref (branch name)</label>
+		<input id="InputRef" class="Hide" type="text"></input>
 
 		<label id="LabelDefinitionId" class="Hide" for="InputDefinitionId">Definition ID</label>
 		<input id="InputDefinitionId" class="Hide" type="text"></input>

@@ -1,4 +1,4 @@
-import { Provider } from '../contracts/Provider';
+import { Provider } from './Provider';
 
 export type PluginState = {
   provider: Provider;
@@ -11,4 +11,6 @@ export type PluginState = {
   message: string;
   definitionId: string;
   orgName: string;
+  projectId: string;
+  ref: string;
 };

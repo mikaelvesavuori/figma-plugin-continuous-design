@@ -1,5 +1,5 @@
-import { PluginState } from '../contracts/PluginState';
-import { Provider } from '../contracts/Provider';
+import { PluginState } from '../interfaces/PluginState';
+import { Provider } from '../interfaces/Provider';
 
 import { getInputs } from './getInputs';
 import { getInputValue } from './getInputValue';
@@ -18,7 +18,9 @@ export function createData(): PluginState {
     branchInput,
     versionInput,
     definitionIdInput,
-    orgNameInput
+    orgNameInput,
+    projectIdInput,
+    refInput
   } = getInputs();
 
   const PROVIDER_VALUE = getInputValue(providerInput) as Provider;
@@ -31,6 +33,8 @@ export function createData(): PluginState {
   const VERSION_VALUE = getInputValue(versionInput, true);
   const DEFINITIONID_VALUE = getInputValue(definitionIdInput, true);
   const ORG_VALUE = getInputValue(orgNameInput, true);
+  const PROJECT_ID = getInputValue(projectIdInput, true);
+  const REF = getInputValue(refInput, true);
 
   const data: PluginState = {
     provider: PROVIDER_VALUE,
@@ -42,7 +46,9 @@ export function createData(): PluginState {
     branch: BRANCH_VALUE,
     version: VERSION_VALUE,
     definitionId: DEFINITIONID_VALUE,
-    orgName: ORG_VALUE
+    orgName: ORG_VALUE,
+    projectId: PROJECT_ID,
+    ref: REF
   };
 
   return data;

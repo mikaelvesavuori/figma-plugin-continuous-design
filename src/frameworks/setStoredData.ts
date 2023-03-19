@@ -1,4 +1,4 @@
-import { PluginState } from '../contracts/PluginState';
+import { PluginState } from '../interfaces/PluginState';
 
 import { getInputs } from './getInputs';
 

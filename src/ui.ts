@@ -3,7 +3,7 @@ import './styles.css';
 import { addEventListeners } from './frameworks/addEventListeners';
 import { setStoredData } from './frameworks/setStoredData';
 import { loadStoredData } from './frameworks/loadStoredData';
-import { updateProvider } from './frameworks/updateProvider';
+import { updateProviderUi } from './frameworks/updateProviderUi';
 
 const DATA_STORAGE_KEY = 'FIGMA_CONTINUOUS_DESIGN_PLUGIN';
 
@@ -25,7 +25,8 @@ async function UiController() {
     const data = message.data ? JSON.parse(message.data) : undefined;
 
     if (message && message.type === 'load') {
-      updateProvider(data.provider);
+      console.log('load', data.provider);
+      updateProviderUi(data.provider);
       setStoredData(data);
     }
 

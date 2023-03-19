@@ -9,4 +9,6 @@ export type Inputs = {
   versionInput: HTMLInputElement;
   definitionIdInput: HTMLInputElement;
   orgNameInput: HTMLInputElement;
+  projectIdInput: HTMLInputElement;
+  refInput: HTMLInputElement;
 };

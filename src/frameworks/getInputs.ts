@@ -1,4 +1,4 @@
-import { Inputs } from '../contracts/Inputs';
+import { Inputs } from '../interfaces/Inputs';
 
 /**
  * @description Get required inputs from DOM.
@@ -8,24 +8,28 @@ export function getInputs(): Inputs {
   const tokenInput: HTMLInputElement | null = document.querySelector('#InputToken');
   const userInput: HTMLInputElement | null = document.querySelector('#InputUser');
   const repoInput: HTMLInputElement | null = document.querySelector('#InputRepo');
+  const orgNameInput: HTMLInputElement | null = document.querySelector('#InputOrgName');
+  const projectIdInput: HTMLInputElement | null = document.querySelector('#InputProjectId');
+  const refInput: HTMLInputElement | null = document.querySelector('#InputRef');
+  const definitionIdInput: HTMLInputElement | null = document.querySelector('#InputDefinitionId');
   const workflowInput: HTMLInputElement | null = document.querySelector('#InputWorkflow');
   const messageInput: HTMLInputElement | null = document.querySelector('#InputMessage');
   const branchInput: HTMLInputElement | null = document.querySelector('#InputBranch');
   const versionInput: HTMLInputElement | null = document.querySelector('#InputVersion');
-  const definitionIdInput: HTMLInputElement | null = document.querySelector('#InputDefinitionId');
-  const orgNameInput: HTMLInputElement | null = document.querySelector('#InputOrgName');
 
   if (
     !providerInput ||
     !tokenInput ||
     !userInput ||
     !repoInput ||
+    !orgNameInput ||
+    !projectIdInput ||
+    !refInput ||
+    !definitionIdInput ||
     !workflowInput ||
     !messageInput ||
     !branchInput ||
-    !versionInput ||
-    !definitionIdInput ||
-    !orgNameInput
+    !versionInput
   )
     throw new Error('Missing required inputs in getInputs()!');
 
@@ -34,11 +38,13 @@ export function getInputs(): Inputs {
     tokenInput,
     userInput,
     repoInput,
+    orgNameInput,
+    projectIdInput,
+    refInput,
+    definitionIdInput,
     workflowInput,
     messageInput,
     branchInput,
-    versionInput,
-    definitionIdInput,
-    orgNameInput
+    versionInput
   };
 }

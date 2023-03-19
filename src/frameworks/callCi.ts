@@ -4,11 +4,24 @@ import { createData } from './createData';
  * @description Call a CI provider's REST API to run a workflow on their service.
  */
 export async function callCi() {
-  let { provider, user, repo, workflow, token, branch, message, version, definitionId, orgName } =
-    createData();
+  let {
+    provider,
+    user,
+    repo,
+    workflow,
+    token,
+    branch,
+    message,
+    version,
+    definitionId,
+    orgName,
+    projectId,
+    ref
+  } = createData();
 
   const urls = {
     github: `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`,
+    gitlab: `https://gitlab.com/api/v4/projects/${projectId}/trigger/pipeline?token=${token}&ref=${ref}`, // TODO
     azure: `https://dev.azure.com/${user}/${repo}/_apis/pipelines/${definitionId}/runs?api-version=6.0-preview.1`,
     bitbucket: `https://api.bitbucket.org/2.0/repositories/${orgName}/${repo}/pipelines/#post`
   };
@@ -21,6 +34,7 @@ export async function callCi() {
         message
       }
     },
+    gitlab: {},
     azure: {
       resources: {
         repositories: {
@@ -60,8 +74,13 @@ export async function callCi() {
   // @ts-ignore
   const body = payloads[provider];
 
+  /**
+   * @description Retrieve a well-formed `Authorization` header.
+   * Note that this is not needed for GitLab.
+   */
   const getAuthHeader = (() => {
     if (provider === 'github') return `token ${token}`;
+    if (provider === 'gitlab') return;
     else if (provider === 'bitbucket') {
       const _token = btoa(unescape(encodeURIComponent(user + ':' + token)));
       return `Basic ${_token}`;
@@ -71,7 +90,7 @@ export async function callCi() {
     } else throw new Error(`No valid provider was given! Provider: ${provider}`);
   })();
 
-  const headers: any = {
+  const headers: Record<string, any> = {
     'Content-Type': 'application/json',
     Authorization: getAuthHeader
   };

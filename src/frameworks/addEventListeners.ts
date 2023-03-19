@@ -1,6 +1,6 @@
 import { callCi } from './callCi';
 import { createData } from '../frameworks/createData';
-import { updateProvider } from '../frameworks/updateProvider';
+import { updateProviderUi } from './updateProviderUi';
 
 /**
  * @description Add event listeners to plugin.
@@ -44,6 +44,6 @@ export function addEventListeners(dataStorageKey: string) {
 
   SELECT_PROVIDER.onchange = async (event: any) => {
     const value = event.target.value;
-    updateProvider(value);
+    updateProviderUi(value);
   };
 }
