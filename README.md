@@ -41,7 +41,7 @@ Given that you have the prerequisites under control, it's just a matter of filli
 
 The strictly necessary fields to get a success response are:
 
-- **Personal access token/Application password**: Your token or password from GitHub/Bitbucket/Azure.
+- **Personal access token/Application password**: Your token or password from GitHub/GitLab/Bitbucket/Azure.
 - **User name**: Your user name. For Azure this is the name of the DevOps organization, as in `https://dev.azure.com/$ORG_NAME/$REPO_NAME/`.
 - **Repository name**: Your repository name as it appears in a typical URL.
 - **Workflow name [GitHub only]**: Has to be specified in the style of `filename.yml`. Defaults to `main.yml`.
