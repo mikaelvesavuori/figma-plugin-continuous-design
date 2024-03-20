@@ -2,9 +2,25 @@
   "name": "Continuous Design - Run CI from Figma",
   "id": "977948326423807703",
   "api": "1.0.0",
-  "main": "build/code.js",
-  "capabilities": [],
-  "enableProposedApi": false,
   "editorType": ["figma"],
-  "ui": "build/ui.html"
+  "networkAccess": {
+    "allowedDomains": [
+      "https://api.github.com/",
+      "https://gitlab.com/",
+      "https://dev.azure.com/",
+      "https://api.bitbucket.org/"
+    ],
+    "devAllowedDomains": [
+      "https://api.github.com/",
+      "https://gitlab.com/",
+      "https://dev.azure.com/",
+      "https://api.bitbucket.org/"
+    ],
+    "reasoning": "The plugin needs call the respective CI provider."
+  },
+  "documentAccess": "dynamic-page",
+  "main": "build/code.js",
+  "ui": "build/ui.html",
+  "capabilities": [],
+  "enableProposedApi": false
 }
